@@ -94,3 +94,38 @@ input:focus {
 #main_button:hover {
   background-color: rgb(91, 91, 91);
 }
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+}
+
+.movie_card {
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center;
+  background-color: #000000;
+  color: white;
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 20px;
+  width: 270px;
+  height: 700px;
+  overflow: hidden;
+}
+
+.movie_card:hover {
+  transform: scale(1.1); /* 이미지 확대 */
+  transition: transform 0.3s; /* 시간 설정 */
+}
+
+.movie_card img {
+  width: 100%;
+  height: auto;
+  top: 50%;
+}
+
+.movie_title {
+  font-family: 'Montserrat', sans-serif;
+}
