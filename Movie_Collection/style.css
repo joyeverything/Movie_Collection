@@ -1,4 +1,4 @@
-@import 'Movie_Collection/reset.css';
+@import 'reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
@@ -23,6 +23,7 @@ body {
 }
 
 .nav_title {
+  font-weight: 500;
   padding: 0 15px;
   font-size: 14px;
 }
@@ -39,7 +40,8 @@ body {
 
 .main_title {
   position: relative;
-  top: 20px;
+  font-weight: 550;
+  top: 40px;
   font-size: 45px;
 }
 
@@ -53,7 +55,7 @@ body {
   width: 400px;
   display: flex;
   padding: 10px 10px;
-  margin: 10px;
+  margin: 50px;
 }
 
 label {
@@ -95,23 +97,23 @@ input:focus {
   background-color: rgb(91, 91, 91);
 }
 
-.card-container {
+.cardContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
+  margin: 0 100px;
 }
 
 .movie_card {
-  justify-content: center; /* 수평 가운데 정렬 */
   align-items: center;
   background-color: #000000;
   color: white;
-  border-radius: 10px;
-  margin: 30px auto;
-  padding: 20px;
-  width: 270px;
-  height: 700px;
+  border-radius: 7px;
+  margin: 27px 16px;
+  padding: 0px;
+  width: 290px;
+  height: 740px;
   overflow: hidden;
 }
 
@@ -121,11 +123,34 @@ input:focus {
 }
 
 .movie_card img {
-  width: 100%;
+  width: 90%;
   height: auto;
   top: 50%;
+  border-radius: 7px;
 }
 
 .movie_title {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin: 10px 5px;
+  font-size: 30px;
+  width: 250px;
+  word-wrap: break-word;
+}
+
+.movie_detail {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin: 10px 5px;
+  font-size: 14px;
+  width: 250px;
+  word-wrap: break-word; /* 글씨 줄바꿈 간격을 조절하려면 width 사용 */
+}
+
+.movie_star {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin: 15px 5px;
+  font-size: 20px;
+  color: yellow;
 }
