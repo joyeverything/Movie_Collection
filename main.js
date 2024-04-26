@@ -16,17 +16,19 @@ fetch(
   .then((response) => response.json())
   .then((data) => {
     let rows = data['results'];
+
     const cardList = document.querySelector('.cardContainer');
     cardList.innerHTML = '';
 
-    rows.forEach((a) => {
-      let _title = a['title'];
-      let _overview = a['overview'];
-      let _poster_path = a['poster_path'];
-      let _vote_average = a['vote_average'];
-      let _id = a['id'];
+    function showMovies(movieList) {
+      movieList.forEach((a) => {
+        let _title = a['title'];
+        let _overview = a['overview'];
+        let _poster_path = a['poster_path'];
+        let _vote_average = a['vote_average'];
+        let _id = a['id'];
 
-      let temp_html = `
+        let temp_html = `
         <div class="movie_cardBox">
         <div class="movie_card" data-id="${_id}">
         <img class="movie_img" src="https://image.tmdb.org/t/p/w500${_poster_path}">
@@ -36,22 +38,28 @@ fetch(
         </div>
       </div>
         `;
-      cardList.insertAdjacentHTML('beforeend', temp_html);
+
+        cardList.insertAdjacentHTML('beforeend', temp_html);
+      });
+    }
+    showMovies(rows);
+    // 검색 기능
+    const searchInput = document.getElementById('main_input');
+    const searchBtn = document.getElementById('main_button');
+
+    searchBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const keyword = searchInput.value.trim().toLowerCase(); // 검색어를 소문자로 변환하여 일관성 있게 처리
+
+      // 입력된 검색어와 일치하는 영화만 필터링하여 다시 렌더링
+      const filteredMovies = rows.filter((movie) =>
+        movie.title.toLowerCase().includes(keyword)
+      );
+      cardList.innerHTML = ''; // 기존 카드 모두 지우고
+      showMovies(filteredMovies);
     });
 
-    //검색 기능
-    /*const searchInput = document.getElementById('main_input');
-          const main_button = document.getElementById('main_button');
-          //검색버튼 input 
-
-          main_button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const cardList = searchInput.value;
-            console.log(cardList);
-            cardList(cardList);*/
-
-    //include, filter,
-
+    // 카드 눌렀을 때 id alert 창
     const movieCards = document.querySelectorAll('.movie_card'); // :CSS 선택자를 이용하여 모든 요소를 선택합니다.
     movieCards.forEach((card) => {
       card.addEventListener('click', function () {
