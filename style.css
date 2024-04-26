@@ -105,19 +105,19 @@ input:focus {
   margin: 0 100px;
 }
 
-.movie_card {
+.movie_cardBox {
   align-items: center;
   background-color: #000000;
   color: white;
   border-radius: 7px;
-  margin: 27px 16px;
+  margin: 30px 16px;
   padding: 0px;
   width: 290px;
   height: 740px;
   overflow: hidden;
 }
 
-.movie_card:hover {
+.movie_cardBox:hover {
   transform: scale(1.1); /* 이미지 확대 */
   transition: transform 0.3s; /* 시간 설정 */
 }
@@ -127,13 +127,14 @@ input:focus {
   height: auto;
   top: 50%;
   border-radius: 7px;
+  margin: 15px;
 }
 
 .movie_title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  margin: 10px 5px;
-  font-size: 30px;
+  margin: 10px 15px;
+  font-size: 28px;
   width: 250px;
   word-wrap: break-word;
 }
@@ -141,7 +142,7 @@ input:focus {
 .movie_detail {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  margin: 10px 5px;
+  margin: 10px 15px;
   font-size: 14px;
   width: 250px;
   word-wrap: break-word; /* 글씨 줄바꿈 간격을 조절하려면 width 사용 */
@@ -150,7 +151,7 @@ input:focus {
 .movie_star {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  margin: 15px 5px;
+  margin: 15px 15px;
   font-size: 20px;
   color: yellow;
 }
