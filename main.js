@@ -43,20 +43,22 @@ fetch(
       });
     }
     showMovies(rows);
+
     // 검색 기능
     const searchInput = document.getElementById('main_input');
     const searchBtn = document.getElementById('main_button');
 
     searchBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const keyword = searchInput.value.trim().toLowerCase(); // 검색어를 소문자로 변환하여 일관성 있게 처리
+      //검색 버튼에 클릭 이벤트 리스너 추가
+      e.preventDefault(); //기본 동작 막음(페이지 새로고침 방지)
+      const keyword = searchInput.value.trim().toLowerCase(); // 검색어 소문자 변환, 앞뒤 공백 제거 -> 일관성 있게 처리
 
       // 입력된 검색어와 일치하는 영화만 필터링하여 다시 렌더링
       const filteredMovies = rows.filter((movie) =>
         movie.title.toLowerCase().includes(keyword)
       );
       cardList.innerHTML = ''; // 기존 카드 모두 지우고
-      showMovies(filteredMovies);
+      showMovies(filteredMovies); //화면 카드 보여주기
     });
 
     // 카드 눌렀을 때 id alert 창
